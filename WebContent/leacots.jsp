@@ -33,17 +33,18 @@
       <a href="index.jsp">文章</a>
       <a href="whisper.jsp">微语</a>
       <a href="leacots.jsp"  class="active">留言</a>
-      <a href="album.jsp">相册</a>
       <a href="about.jsp">关于</a>
     </div>
     <ul class="layui-nav header-down-nav">
       <li class="layui-nav-item"><a href="index.jsp">文章</a></li>
       <li class="layui-nav-item"><a href="whisper.jsp">微语</a></li>
       <li class="layui-nav-item"><a href="leacots.jsp"  class="active">留言</a></li>
-      <li class="layui-nav-item"><a href="album.jsp">相册</a></li>
       <li class="layui-nav-item"><a href="about.jsp">关于</a></li>
     </ul>
     <p class="welcome-text">
+    	<c:if test="${empty userName}">
+    		<a class="layui-nav-item" href="login.jsp">登入</a>
+		</c:if>
      ${userName} , 欢迎来到<span class="name">阎某</span>的博客~
     </p>
   </div>
@@ -78,7 +79,7 @@
                <%
                     	ArrayList<Ggcom> coms =  new LeaShowDao().getcomInfo();
  					 	if (coms == null){
- 					 		coms = new ArrayList();
+ 					 		coms = new ArrayList<Ggcom>();
  					 	}
  					 	int p = coms.size();
  				%>

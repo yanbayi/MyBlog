@@ -31,15 +31,8 @@
   <div class="layui-side layui-bg-black">
     <div class="layui-side-scroll">
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-        <li class="layui-nav-item layui-nav-itemed">
-          <a class="" href="javascript:;">文章</a>
-          <dl class="layui-nav-child">
-            <dd><a href=" ">写文章</a></dd>
-            <dd><a href=" ">文章管理</a></dd>
-            <dd><a href=" ">评论管理</a></dd>
-          </dl>
-        </li>
+      <ul class="layui-nav layui-nav-tree">
+        
         <li class="layui-nav-item">
           <a href="javascript:;">微语</a>
           <dl class="layui-nav-child">
@@ -51,23 +44,17 @@
         <li class="layui-nav-item">
           <a href="javascript:;">留言</a>
           <dl class="layui-nav-child">
-            <dd><a href=" ">留言管理</a></dd>
-          </dl>
-        </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;">相册</a>
-          <dl class="layui-nav-child">
-            <dd><a href=" ">相册管理</a></dd>
+            <dd><a href="page/leaDel.jsp">留言管理</a></dd>
           </dl>
         </li>
         <li class="layui-nav-item">
           <a href="javascript:;">关于</a>
           <dl class="layui-nav-child">
-            <dd><a href=" ">关于管理</a></dd>
+            <dd><a href="page/about.jsp">关于管理</a></dd>
           </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;">用户管理</a>
+          <a href="page/user.jsp">用户管理</a>
         </li>
       </ul>
     </div>
@@ -88,7 +75,7 @@
   
   <div class="layui-body">
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;">内容主体区域</div>
+    <div style="padding: 15px;">欢迎来到 咕咕后台管理</div>
   </div>
   
   

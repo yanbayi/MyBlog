@@ -34,16 +34,23 @@ public class LeacotsServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		HttpSession session=request.getSession();
 		String username=(String)session.getAttribute("userName");	
+		String Rights=(String)session.getAttribute("rights");
 		String comcontent = request.getParameter("content");
-		System.out.print(comcontent);
-		Ggcom com = new Ggcom();
-        com.setComContent(comcontent);
-        com.setUserName(username);
-
-        LeacotDao add=new LeacotDao();
-        add.addLeacot(com);
-        
-        response.sendRedirect("leacots.jsp");
+		if(Rights == "1"||Rights == "2") {
+			Ggcom com = new Ggcom();
+			com.setComContent(comcontent);
+			com.setUserName(username);
+			LeacotDao add=new LeacotDao();
+			add.addLeacot(com);
+			response.sendRedirect("leacots.jsp");
+		}else if(Rights == "3"){
+		
+			response.sendRedirect("fall3.jsp");
+		}else if(Rights ==""||Rights == null) {
+			response.sendRedirect("fall4.jsp");
+		}else {
+			response.sendRedirect("fall4.jsp");
+		}
 	}
 
 }

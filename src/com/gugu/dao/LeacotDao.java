@@ -26,6 +26,19 @@ public class LeacotDao {
             e.printStackTrace();
         }
         return true;
-
     }
+	
+	public boolean delete(int id) {
+		DbUtil db=new DbUtil();
+		try {
+            String sql="DELETE FROM gg_comment WHERE com_id="+id;
+            Connection conn=db.getCon();
+            PreparedStatement ps=conn.prepareStatement(sql);
+            ps.executeUpdate();
+            DbUtil.getClose(conn);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }	
+		return true;
+	}
 }

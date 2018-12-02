@@ -1,6 +1,5 @@
 package com.gugu.util;
 
-import java.util.Properties;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
  

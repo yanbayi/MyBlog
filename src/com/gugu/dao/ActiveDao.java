@@ -32,4 +32,18 @@ public class ActiveDao {
         return true;
 
     }
+	public boolean forbiden(int userid) {
+		DbUtil db=new DbUtil();
+		try {
+        	String sql="UPDATE gg_user SET user_rights=3  WHERE user_id="+userid;
+            Connection conn=db.getCon();
+            PreparedStatement ps=conn.prepareStatement(sql);
+            ps.executeUpdate();
+
+            DbUtil.getClose(conn);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		return true;
+	}
 }

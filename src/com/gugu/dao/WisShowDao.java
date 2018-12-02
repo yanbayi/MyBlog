@@ -11,7 +11,7 @@ import com.gugu.util.DbUtil;
 public class WisShowDao {
 	
 	public ArrayList<GgNote> getcomInfo(){
-		ArrayList<GgNote> coms=new ArrayList();
+		ArrayList<GgNote> coms=new ArrayList<GgNote>();
 		DbUtil db=new DbUtil();
         try {
         	String sql="SELECT note_id,note_content,note_date,note_like,note_photo  FROM gg_note ORDER BY note_date Desc ";

@@ -11,7 +11,7 @@
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <base href=" <%=basePath%>">
 <meta charset="UTF-8">
@@ -35,17 +35,18 @@
       <a href="index.jsp">文章</a>
       <a href="whisper.jsp"  class="active">微语</a>
       <a href="leacots.jsp">留言</a>
-      <a href="album.jsp">相册</a>
       <a href="about.jsp">关于</a>
     </div>
     <ul class="layui-nav header-down-nav">
       <li class="layui-nav-item"><a href="index.jsp">文章</a></li>
       <li class="layui-nav-item"><a href="whisper.jsp"  class="active">微语</a></li>
       <li class="layui-nav-item"><a href="leacots.jsp">留言</a></li>
-      <li class="layui-nav-item"><a href="album.jsp">相册</a></li>
       <li class="layui-nav-item"><a href="about.jsp">关于</a></li>
     </ul>
     <p class="welcome-text">
+    	<c:if test="${empty userName}">
+    		<a class="layui-nav-item" href="login.jsp">登入</a>
+		</c:if>
       ${userName} , 欢迎来到<span class="name">阎某</span>的博客~
     </p>
   </div>
@@ -57,9 +58,9 @@
       <%
       ArrayList<GgNote> notes =  new WisShowDao().getcomInfo();
  	  if (notes == null){
- 		 notes = new ArrayList();
+ 		 notes = new ArrayList<GgNote>();
  	  }
- 	  int k = 0;
+ 	  int k = 1;
  	  int p = notes.size();
  	  %>
  	  <%
@@ -90,15 +91,17 @@
               <div class="form">
                 <img src="res/img/header2.png">
                 
-                <form class="layui-form" action="">
+                
+                <form class="layui-form" method="post" action="WhiComServlet">
                   <div class="layui-form-item layui-form-text">
                     <div class="layui-input-block">
-                      <textarea name="desc" class="layui-textarea"></textarea>
+                      <textarea name="noteComContent" class="layui-textarea"></textarea>
+                      <input type="hidden" name="noteId" value="<%=note.getNoteId()%>"/>
                     </div>
                   </div>
                   <div class="layui-form-item">
                     <div class="layui-input-block" style="text-align: right;">
-                      <button class="layui-btn definite">確定</button>
+                      <input type="submit" class="layui-btn definite" value="确定"/>
                     </div>
                   </div>
                 </form>
@@ -108,7 +111,7 @@
               <%
      			 ArrayList<GgNoteCom> coms =  new WisComShowDao().getcomInfo(note.getNoteId());
  	 			 if (coms == null){
- 						coms = new ArrayList();
+ 						coms = new ArrayList<GgNoteCom>();
  				 }
  				 k = coms.size()+1;
  			  %>
@@ -141,18 +144,6 @@
       <div id="demo" style="text-align: center;"></div>
     </div>
   </div>
-  <script type="text/html" id="laytplCont">
-    <div class="cont">
-      <div class="img">
-        <img src="{{d.avatar}}" alt="">
-      </div>
-      <div class="text">
-        <p class="tit"><span class="name">{{d.name}}</span><span class="data">2018/06/06</span></p>
-        <p class="ct">{{d.cont}}</p>
-      </div>
-    </div>
-  </script>
-  
   
   <div class="footer-wrap" style="background:#1003">
     <div class="footer w1000">
@@ -164,15 +155,14 @@
   <script type="text/javascript">
    layui.config({
       base: 'res/js/util/'
-    }).use(['element','laypage','form','menu'],function(){
-      element = layui.element,laypage = layui.laypage,form = layui.form,menu = layui.menu;
+    }).use(['element','laypage','menu'],function(){
+      element = layui.element,laypage = layui.laypage,menu = layui.menu;
       laypage.render({
         elem: 'demo'
         ,count: 70 //数据总数，从服务端得到
       });
       menu.init();
       menu.off();
-      menu.submit()
     })
   </script>
 </body>

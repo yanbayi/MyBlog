@@ -3,6 +3,7 @@ package com.gugu.pojo;
 import java.util.Date;
 
 public class Ggcom {
+	private int comId;
 	private String UserName;
 	private Date ComDate;
 	private String ComContent;
@@ -29,5 +30,13 @@ public class Ggcom {
     public void setComContent(String comContent) {
     	ComContent = comContent;
     }
+
+	public int getComId() {
+		return comId;
+	}
+
+	public void setComId(int comId) {
+		this.comId = comId;
+	}
 
 }

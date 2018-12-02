@@ -65,33 +65,8 @@ layui.define(['mm','jquery'],function(exports){
         }
       })
     },
-    submit: function(){
-      $('.definite').on('click',function(e){
-        var event = e || event;
-        event.preventDefault();
-        var $listcont = $(this).parents('.form').siblings('.list-cont').length ? $(this).parents('.form').siblings('.list-cont') : $(this).parents('.form-box').siblings('.list-cont');
-        console.log($listcont)
-        var img = $(this).parents('form').siblings('img').attr('src');
-        var textarea = $(this).parents('.layui-form-item').siblings('.layui-form-text').children('.layui-input-block').children('textarea');
-        var name = $(textarea).val();
-        var html = laytplCont.innerHTML;
-        var data = {
-          avatar : img,
-          name : '吴亦凡',
-          cont : name,
-        }
-        if(name){
-          var cont = mm.renderHtml(html,data);
-          $listcont.prepend(cont);
-          var cunt = $(this).parents('.form-box').siblings('.volume').children('span');
-          var cunts = $(this).parents('.form-box').siblings('.list-cont').children('.cont').length;
-          textarea.val('')
-        }else{
-          layer.msg('请输入内容')
-        } 
-        cunt.text(cunts);
-      })
-    }
+    
+    
   }     
   exports('menu',menu)
 });

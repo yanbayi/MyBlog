@@ -11,10 +11,10 @@ import com.gugu.util.DbUtil;
 public class LeaShowDao {
 	
 	public ArrayList<Ggcom> getcomInfo(){
-		ArrayList<Ggcom> coms=new ArrayList();
+		ArrayList<Ggcom> coms=new ArrayList<Ggcom>();
 		DbUtil db=new DbUtil();
         try {
-        	String sql="SELECT user_name,com_content,com_date  FROM gg_comment ORDER BY com_date Desc ";
+        	String sql="SELECT user_name,com_content,com_date,com_id  FROM gg_comment ORDER BY com_date Desc ";
             Connection conn=db.getCon();
             PreparedStatement ps=conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -25,6 +25,7 @@ public class LeaShowDao {
             	com.setComContent(rs.getString("com_content"));
             	com.setComDate(rs.getDate("com_date"));
             	com.setUserName(rs.getString("user_name"));
+            	com.setComId(rs.getInt("com_id"));
             	coms.add(com);
             }
 

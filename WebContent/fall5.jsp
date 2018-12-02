@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-hello--
-${userName} 
+<script>alert('用户权限不够，请用管理员账号登陆! \n  ！')</script>
+<script> window.location.href='index.jsp' </script>
 </body>
 </html>
