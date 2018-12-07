@@ -6,8 +6,8 @@
   </filter>
   <filter-mapping>
     <filter-name>LoginFilter</filter-name>
-    <url-pattern>/page/*</url-pattern>
-    <url-pattern>/admin.jsp</url-pattern>
+    <!-- <url-pattern>/page/*</url-pattern> -->
+   <url-pattern>/admin.jsp</url-pattern>
   </filter-mapping>
   
   

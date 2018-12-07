@@ -28,9 +28,9 @@ public class LoginFilter implements Filter {
         HttpSession session=request.getSession();
         
         
-        Object uid= session.getAttribute("userName");
+        String uid= (String) session.getAttribute("rights");
         
-        if(uid == "pulaige"){//已经登录
+        if(uid == "1"){//已经登录
             arg2.doFilter(request, response);//放行，递交给下一个过滤器
             
         }else if(uid == null){
