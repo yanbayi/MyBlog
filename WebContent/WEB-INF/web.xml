@@ -9,8 +9,6 @@
     <!-- <url-pattern>/page/*</url-pattern> -->
    <url-pattern>/admin.jsp</url-pattern>
   </filter-mapping>
-  
-  
   <display-name>gugu</display-name>
   <servlet>
     <description>com.gugu.servlet</description>

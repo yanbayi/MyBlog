@@ -18,7 +18,6 @@ import java.sql.SQLException;
 
     }
 
-
     public static void getClose(Connection con) throws SQLException{
         if(con!=null){
             con.close();

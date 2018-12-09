@@ -14,8 +14,7 @@ import javax.servlet.http.HttpSession;
 public class LoginFilter implements Filter {
 
 	@Override
-	public void destroy() {
-		
+	public void destroy() {	
 
 	}
 
@@ -26,10 +25,8 @@ public class LoginFilter implements Filter {
 		HttpServletRequest request=(HttpServletRequest) arg0;
         HttpServletResponse response=(HttpServletResponse) arg1;
         HttpSession session=request.getSession();
-        
-        
-        String uid= (String) session.getAttribute("rights");
-        
+           
+        String uid= (String) session.getAttribute("rights");   
         if(uid == "1"){//已经登录
             arg2.doFilter(request, response);//放行，递交给下一个过滤器
             
@@ -40,7 +37,6 @@ public class LoginFilter implements Filter {
         }
 	}
 	
-
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
 

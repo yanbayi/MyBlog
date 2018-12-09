@@ -21,32 +21,7 @@
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
   				<legend>咕咕博客登录</legend>
 			</fieldset>
-            <!-- <div>
-                <form role="form" method="POST" name="login" action="LoginServlet">
-                    <input type="text" name="userName" placeholder="Admin..."/>
-                    <input type="password" name="userPassword" placeholder="Password...">
-                    <input type="text" name = "validationCode" >验证码
-                    <img  src="ValidationCodeServlet" id="CreateCheckCode" onclick="change()"/>
-                    <input type="submit" name="login" value="登录"/>
-                </form>
-            </div> -->
         </div>            
-        <!-- <br>  
-		<form id="form1" name="form1" method="post" action="testReg.do">
-  			<p>注册并发送欢迎邮件测试  </p>
-  			<p>姓名：
-   				 <input type="text" id="username" name="username"/>
-  			</p>
-  			<p>密码：
-   				 <input type="text" id="userpassword" name="userpassword"/>
-  			</p>
-  			<p>E-mail:
-   				 <input type="text" id="email" name="email"/>
- 			</p>
-  			<p>
-    			<input type="submit" value="提交" />    
-   			</p>
-		</form> -->
 <div class="layui-container fly-marginTop">
   <div class="fly-panel fly-panel-user">
     <div class="layui-tab layui-tab-brief" >
@@ -88,9 +63,7 @@
       </div>
     </div>
   </div>
-</div>
-
-		
+</div>		
 <script type="text/javascript">
 function change(){ 
 	document.getElementById("CreateCheckCode").src="ValidationCodeServlet?"+Math.random(); 

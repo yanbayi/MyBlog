@@ -22,11 +22,7 @@ public class ActiveServlet extends HttpServlet {
         
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*		PrintWriter out = response.getWriter();
-		request.setCharacterEncoding("UTF-8");  
-        response.setContentType("text/html;charset=UTF-8");*/
 		
 		String userName = request.getParameter("userName");
 		String userPassword = request.getParameter("userPassword");
